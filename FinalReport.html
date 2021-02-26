@@ -216,11 +216,57 @@ rowPerc(table1)</code></pre>
 <div id="inferential-results" class="section level2">
 <h2>Inferential Results</h2>
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+<pre class="r"><code>chisq.test(table1)</code></pre>
+<pre><code>## 
+##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
+## 
+## data:  table1
+## X-squared = 15.634, df = 1, p-value = 7.686e-05</code></pre>
+<pre class="r"><code>chisqtestGC(table1)</code></pre>
+<pre><code>## Pearson&#39;s Chi-squared test with Yates&#39; continuity correction 
+## 
+## Observed Counts:
+##         treatment
+## infected drug placebo
+##     aids  210     147
+##     none 5484    5927
+## 
+## Counts Expected by Null:
+##         treatment
+## infected    drug placebo
+##     aids  172.74  184.26
+##     none 5521.26 5889.74
+## 
+## Contributions to the chi-square statistic:
+##         treatment
+## infected drug placebo
+##     aids 8.04    7.54
+##     none 0.25    0.24
+## 
+## 
+## Chi-Square Statistic = 15.6339 
+## Degrees of Freedom of the table = 1 
+## P-Value = 1e-04</code></pre>
+<pre class="r"><code>fisher.test(table1)</code></pre>
+<pre><code>## 
+##  Fisher&#39;s Exact Test for Count Data
+## 
+## data:  table1
+## p-value = 6.596e-05
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  1.240408 1.925729
+## sample estimates:
+## odds ratio 
+##   1.543902</code></pre>
+<p>P-value = 0.0000659, This number is so small that the result we found are not likely to occur by chance.</p>
+<p>The odds ratio 1.543902 means that women who got the vaccine were about 1.5 times more than likely to get AIDS than women who got the placebo.</p>
 </div>
 </div>
 <div id="discussion-and-conclusion" class="section level1">
 <h1>Discussion and Conclusion</h1>
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+<p>The question was, Is the vaccine effective for women? We can conclude that the vaccine was found not to be effective for women in preventing AIDS.</p>
 </div>
 
 
